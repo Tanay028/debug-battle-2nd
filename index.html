@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FinanceFlow</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>💎 FINANCEFLOW</h1>
+    <p>Total Balance</p>
+    <h2 id="total-balance">$0.00</h2>
+
+    <div class="stats">
+      <div>
+        <p>Income</p>
+        <h3 id="total-income">$0.00</h3>
+      </div>
+      <div>
+        <p>Expense</p>
+        <h3 id="total-expense">$0.00</h3>
+      </div>
+    </div>
+  </header>
+
+  <input type="text" id="search" placeholder="Search transactions...">
+
+  <button id="openModal" class="add-btn">+ Add Transaction</button>
+
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="income">Income</button>
+    <button class="filter-btn" data-filter="expense">Expenses</button>
+  </div>
+
+  <ul id="transaction-list"></ul>
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h2>NEW TRANSACTION</h2>
+      <button id="close-btn">&times;</button>
+    </div>
+
+    <form id="transaction-form">
+      <input type="text" id="text" placeholder="Description" required>
+      <input type="number" id="amount" placeholder="Amount" required>
+
+      <div class="type-toggle">
+        <input type="radio" name="type" value="income" id="income" checked hidden>
+        <label for="income">Income</label>
+
+        <input type="radio" name="type" value="expense" id="expense" hidden>
+        <label for="expense">Expense</label>
+      </div>
+
+      <select id="category">
+        <option value="salary">Salary</option>
+        <option value="food">Food</option>
+        <option value="shopping">Shopping</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="utilities">Utilities</option>
+        <option value="other">Other</option>
+      </select>
+
+      <button type="submit" class="save-btn">Save Transaction</button>
+    </form>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
